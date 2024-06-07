@@ -262,6 +262,24 @@ https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js
 
 
     $(document).ready(function() {
+        $('#data-users').DataTable({
+            scrollX: true,
+            scrollCollapse: true,
+            bSort: false,
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print', 'copy'
+            ],
+            columnDefs: [
+                { width: '100px', targets: [0,1,2,3,4] },
+                { width: '250px', targets: [5,6,7,8] }
+               
+            ]
+        });
+    });
+
+
+    $(document).ready(function() {
         $('#data-clients').DataTable({
             scrollX: true,
             scrollCollapse: true,

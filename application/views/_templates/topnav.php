@@ -1,9 +1,16 @@
  <!-- Header START -->
  <div class="header">
-    <div class="logo logo-dark">
-        <a href="<?php echo base_url(); ?>">
+    <div class="logo logo-dark mt-2">
+        <a style="color:black; font-weight:900; font-size:24px;" href="<?php echo base_url(); ?>">
+            <!--
             <img style="width:200px;" src="<?php echo base_url(); ?>assets/images/logowide.png" alt="Logo">
             <img style="width:70px;" class="logo-fold" src="<?php echo base_url(); ?>assets/images/logosquare.png" alt="Logo">
+            -->
+            Bienes<span class="text-success">Raices
+                        <!--little house icon-->
+                        <sup><span class="anticon anticon-home"></sup>
+                        </span>
+            
         </a>
     </div>
     <div class="logo logo-white">

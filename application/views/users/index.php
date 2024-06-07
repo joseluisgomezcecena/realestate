@@ -25,11 +25,13 @@
             </div>
         <?php } ?>
 
-        <table style="font-size:12px; width:100%" id="data-tables" class="table">
+        <table style="font-size:12px;" id="data-users" class="table">
             <thead>
                 <tr>
                     <th>Usuario</th>
                     <th>Email</th>
+                    <th>Telefono</th>
+                    <th>Agente</th>
                     <th>Administrador</th>
                     <th>Fecha de Registro</th>
                     <th>Actualizado</th>
@@ -42,6 +44,8 @@
                     <tr>
                         <td><?php echo $user['username']; ?></td>
                         <td><?php echo $user['email']; ?></td>
+                        <td><?php echo $user['user_phone'] ? $user['user_phone'] : 'N/A' ; ?></td>
+                        <td><?php echo $user['is_agent'] ? 'Si' : 'No'; ?></td>
                         <td><?php echo $user['is_admin'] ? 'Si' : 'No'; ?></td>
                         <td><?php echo $user['created_at']; ?></td>
                         <td><?php echo $user['updated_at']; ?></td>

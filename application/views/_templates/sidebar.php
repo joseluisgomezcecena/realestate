@@ -76,7 +76,7 @@
                     <span class="icon-holder">
                         <i class="anticon anticon-user-add"></i>
                     </span>
-                    <span class="title">Usuarios</span>
+                    <span class="title">Usuarios y Agentes</span>
                     <span class="arrow">
                         <i class="arrow-icon"></i>
                     </span>

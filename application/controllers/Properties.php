@@ -29,6 +29,7 @@ class Properties extends CI_Controller
         $data['active'] = 'properties';
         $data['states'] = $this->Property_model->get_states();
         $data['custom_fields'] = $this->Customfields_model->get_customfields();
+        $data['users'] = $this->User_model->get_agents();
         
         
         //$this->form_validation->set_rules('property_type', 'Property Type', 'required');
@@ -81,6 +82,7 @@ class Properties extends CI_Controller
                 'bedrooms' => $this->input->post('bedrooms'),
                 'bathrooms' => $this->input->post('bathrooms'),
                 'garage' => $this->input->post('garage'),
+                'user_id' => $this->input->post('user_id')
             );
 
             $property_id = $this->Property_model->create_property($data);
@@ -120,6 +122,8 @@ class Properties extends CI_Controller
         $data['states'] = $this->Property_model->get_states();
         $data['custom_fields'] = $this->Customfields_model->get_customfields();
         $data['property_custom_fields'] = $this->Property_model->get_custom_fields($property_id);
+        $data['users'] = $this->User_model->get_agents();
+
         
         $data['property_custom_field_ids'] = array_column($data['property_custom_fields'], 'c_custom_field');
         
@@ -170,6 +174,7 @@ class Properties extends CI_Controller
                 'bedrooms' => $this->input->post('bedrooms'),
                 'bathrooms' => $this->input->post('bathrooms'),
                 'garage' => $this->input->post('garage'),
+                'user_id' => $this->input->post('user_id')
             );
 
             $this->Property_model->update_property($property_id, $data);

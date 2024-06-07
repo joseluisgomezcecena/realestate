@@ -13,6 +13,15 @@ class User_model extends CI_Model
         return $query->result_array();
     }
 
+    
+
+    public function get_agents()
+    {
+        $this->db->where('is_agent', 1);
+        $query = $this->db->get('users');
+        return $query->result_array();
+    }
+
 
     public function get_user($id)
     {

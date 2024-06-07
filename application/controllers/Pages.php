@@ -30,23 +30,38 @@ class Pages extends CI_Controller
 
         }
 
-        if ($page == 'property') {
-            //$data['property'] = $this->Property_model->get_property($this->uri->segment(2));
-            //$data['images'] = $this->Property_model->get_images($this->uri->segment(2));
-
-            //get property by slug
-            $data['property'] = $this->Property_model->get_property_by_slug($this->uri->segment(2));
-            $data['images'] = $this->Property_model->get_images($data['property']['property_id']);
-        }
-
-
-
         $this->load->view('_frontend/header', $data);
         $this->load->view('_frontend/navbar', $data);
         $this->load->view('pages/' . $page, $data);
         $this->load->view('_frontend/footer', $data);
     }
 
+
+    public function property_details($slug) {
+        $data['controller'] = $this;
+        
+        //get property by slug
+        $data['property'] = $this->Property_model->get_property_by_slug($slug);
+        $data['images'] = $this->Property_model->get_images($data['property']['property_id']);
+
+        //get custom fields
+        $data['custom_fields'] = $this->Property_model->get_custom_fields_for_page($data['property']['property_id']);
+
+        $user_id = $data['property']['user_id'];
+        $data['user'] = $this->User_model->get_user($user_id);
+        
+
+        $data['title'] = 'Detalles | ' . $data['property']['title'];
+        $data['categories'] = $this->Categories_model->get_categories();
+        $data['cities'] = $this->Property_model->get_all_municipios();
+    
+        
+    
+        $this->load->view('_frontend/header', $data);
+        $this->load->view('_frontend/navbar', $data);
+        $this->load->view('pages/property_details', $data);
+        $this->load->view('_frontend/footer', $data);
+    }
 
 
 

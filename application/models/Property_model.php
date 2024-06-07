@@ -134,5 +134,20 @@ class Property_model extends CI_Model
     }
 
 
+    public function get_custom_fields_for_page($property_id){
+        //get all custom fields for this property and return them as an array
+        $this->db->where('c_property_id', $property_id);
+        $this->db->select('custom_fields.custom_name, property_custom_field.c_custom_field, property_custom_field.c_property_id, property_custom_field.c_custom_field');
+        $this->db->from('property_custom_field');
+        $this->db->join('custom_fields', 'custom_fields.custom_id = property_custom_field.c_custom_field');
+        $query = $this->db->get();
+
+        //$last_query = $this->db->last_query();
+        //print_r($last_query);
+
+        return $query->result_array();
+    }
+
+
 
 }

@@ -3,7 +3,14 @@
         <div class="card shadow-lg">
             <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between m-b-30">
+                    <!--
                     <img style="width:150px;" class="img-fluid" alt="" src="<?php echo base_url() ?>assets/images/logowide.png">
+                    -->
+                    <a style="color:black; font-weight:900" class="navbar-brand text-brand" href="<?php echo base_url(); ?>">Bienes<span class="text-success">Raices
+                        <!--little house icon-->
+                        <sup><span class="anticon anticon-home"></sup>
+                        </span>
+                    </a>
                     <h2 class="m-b-0"></h2>
                 </div>
                 <form action="<?php echo base_url('auth/login') ?>" method="post">
@@ -29,7 +36,7 @@
                    
                     <div class="form-group">
                         <div class="d-flex align-items-center justify-content-between p-t-15">
-                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                            <button type="submit" class="btn btn-success">Iniciar Sesión</button>
                         </div>
                     </div>
                 </form>

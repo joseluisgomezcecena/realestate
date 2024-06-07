@@ -207,6 +207,24 @@
                                 </div>
                             </div>
 
+
+
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="city">Agente Inmobiliario</label> 
+                                    <select class="form-control" name="user_id" id="user_id">
+                                        <option value="">Seleccionar</option>
+                                        <?php foreach ($users as $user): ?>
+                                            <option <?php if($property['user_id'] == $user['user_id']){echo "selected";}else{echo "";} ?>  value="<?php echo $user['user_id']; ?>"><?php echo $user['username']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <?php echo form_error('user_id', '<div class="text-danger">', '</div>'); ?>
+                                </div>
+                            </div>
+
+
+
+
                             <div class="col-md-12 mb-5">
                                 <div id="editor">
                                     <?php echo $property['description']; ?>

@@ -47,6 +47,11 @@
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email" autocomplete="off">
                         <?php echo form_error('email', '<div class="text-danger">', '</div>'); ?>
                     </div>
+                    <div class="form-group col-lg-4">
+                        <label class="font-weight-semibold" for="email">Telefono de contacto:</label>
+                        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Telefono" autocomplete="off">
+                        <?php echo form_error('phone', '<div class="text-danger">', '</div>'); ?>
+                    </div>
                     <div class="form-group col-lg-6">
                         <label class="font-weight-semibold" for="password">Contraseña:</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off">
@@ -58,11 +63,19 @@
                         <?php echo form_error('password2', '<div class="text-danger">', '</div>'); ?>
                     </div>
 
+                    <div class="form-group col-lg-6">
+                        <label class="font-weight-semibold" for="confirmPassword">Agente inmobiliario:</label>
+                        <select class="form-control" name="is_agent">
+                            <option value="0">No</option>
+                            <option value="1">Si</option>
+                        </select>
+                    </div>
+
                     <?php if ($this->session->userdata('is_admin') == 1): ?>
                         <div class="form-group col-lg-6">
                             <label class="font-weight-semibold" for="confirmPassword">Rol:</label>
                             <select class="form-control" name="is_admin">
-                                <option value="0">Usuario</option>
+                                <option value="0">Visitante</option>
                                 <option value="1">Administrador</option>
                             </select>
                         </div>

@@ -51,7 +51,10 @@ class Users extends MY_Controller
                 'username' => $this->input->post('username'),
                 'email' => $this->input->post('email'),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-                'is_admin' => $is_admin   
+                'is_admin' => $is_admin,
+                'user_phone' => $this->input->post('phone'),
+                'is_agent' => $this->input->post('is_agent')
+
             );
 
             if ($this->User_model->create_user($data))
