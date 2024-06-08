@@ -204,6 +204,15 @@ class Properties extends CI_Controller
 
 
 
+    public function cover($property_id)
+    {
+        $this->Property_model->update_cover($property_id);
+        $this->session->set_flashdata('success', 'Se actualizo el estado en la portada.');
+        redirect(base_url() . 'properties');
+    }
+
+
+
 
 
 

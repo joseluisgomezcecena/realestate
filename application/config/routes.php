@@ -26,6 +26,7 @@ $route['properties/create'] = 'properties/create';
 $route['properties/images/(:any)'] = 'properties/images/$1';
 $route['properties/update/(:any)'] = 'properties/update/$1';
 $route['properties/delete/(:any)'] = 'properties/delete/$1';
+$route['properties/cover/(:any)'] = 'properties/cover/$1';
 
 
 
@@ -76,7 +77,7 @@ $route['users/signature/(:any)'] = 'users/signature/$1';
 //reports routes.
 $route['reports'] = 'reports/index';
 
-$route['property_details/(:any)'] = 'pages/property_details/$1';
+$route['property/(:any)'] = 'pages/property_details/$1';
 //default routes.
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';

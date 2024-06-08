@@ -58,6 +58,19 @@ class Property_model extends CI_Model
 
 
 
+    public function get_slides()
+    {
+        $this->db->select('*');
+        $this->db->from('property');
+        $this->db->join('images', 'images.property_id = property.property_id');
+        $this->db->where('images.image_order', 0);
+        $this->db->where('property.portada', 1);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+
+
 
     public function create_property($data){
         $this->db->insert('property', $data);
@@ -103,6 +116,32 @@ class Property_model extends CI_Model
         return $query->result_array();
     }
     
+
+
+    public function update_cover($property_id){
+        
+        //select property.portada from property where property_id = $property_id
+        $this->db->select('portada');
+        $this->db->where('property_id', $property_id);
+        $query = $this->db->get('property');
+        $portada = $query->row_array();
+        $portada = $portada['portada'];
+
+        if ($portada == 0) {
+            $data = array('portada' => 1);
+        }else{
+            $data = array('portada' => 0);
+        }
+
+        //update property set portada = $data where property_id = $property_id
+        $this->db->where('property_id', $property_id);
+        return $this->db->update('property', $data);
+
+
+    
+    }
+
+
 
     public function get_municipios($state_id){
         $this->db->where('estado', $state_id);

@@ -18,57 +18,59 @@
 
         <div class="row">
           
-        
+        <?php foreach ($properties as $property): ?>  
           <div class="col-lg-4">
             <div class="">
-              <div class="card-box-a card-shadow">
+           
+            <div class="card-box-a card-shadow">
                 <div class="img-box-a">
-                  <img src="./assets/frontend/img/property-6.jpg" alt="" class="img-a img-fluid">
+                  <img src="./uploads/properties/<?php echo  $controller->main_image($property['property_id']) ?>" alt="" class="img-a img-fluid">
                 </div>
                 <div class="card-overlay">
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="property-single.html">206 Mount
-                          <br /> Olive Road Two</a>
+                        <a href="property-single.html"><?php echo $property['title'] ?></a>
+                          <br /> <?php echo $property['street'] ?> <?php echo $property['number'] ?> <?php $property['nhood'] ?></a>
                       </h2>
                     </div>
                     <div class="card-body-a">
                       <div class="price-box d-flex">
-                        <span class="price-a">rent | $ 12.000</span>
+                        <span class="price-a"><?php if( $property['purpose'] == 'v'){echo "Venta";}elseif ($property['purpose']=='r'){echo "Renta";}else{echo "Traspaso";} ?> | $ <?php echo number_format($property['price']) ?></span>
                       </div>
-                      <a href="#" class="link-a">Click here to view
+                      <a href="<?php echo base_url("property/" . $property['slug']) ?>" class="link-a">Ver mas!
                         <span class="bi bi-chevron-right"></span>
                       </a>
                     </div>
                     <div class="card-footer-a">
                       <ul class="card-info d-flex justify-content-around">
                         <li>
-                          <h4 class="card-info-title">Area</h4>
-                          <span>340m
-                            <sup>2</sup>
+                          <h4 class="card-info-title">Terreno</h4>
+                          <span><?php echo $property['surface'] ?> <?php echo $property['um'] ?>
+                            <!--<sup>2</sup>-->
                           </span>
                         </li>
                         <li>
-                          <h4 class="card-info-title">Beds</h4>
-                          <span>2</span>
+                          <h4 class="card-info-title">Recamaras</h4>
+                          <span><?php echo $property['bedrooms'] ?></span>
                         </li>
                         <li>
-                          <h4 class="card-info-title">Baths</h4>
-                          <span>4</span>
+                          <h4 class="card-info-title">Baños</h4>
+                          <span><?php echo $property['bathrooms'] ?></span>
                         </li>
                         <li>
                           <h4 class="card-info-title">Garages</h4>
-                          <span>1</span>
+                          <span><?php echo $property['garage'] ?></span>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
-            </div><!-- End carousel item -->
+            </div><!-- End  item -->
+           
           </div>
-
+        <?php endforeach; ?>
           
 
         </div>

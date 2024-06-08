@@ -64,6 +64,7 @@
                         </td>
                         <td>
                             <?php if($property['portada']== 0){echo "No";}else{echo "Si";} ?>
+                            <a href="<?php echo base_url("properties/cover/") ?><?php echo $property['property_id'] ?>">Cambiar</a>
                         </td>
                         <td><?php echo date_format(date_create($property['created_at']), "m/d/Y H:i:s"); ?></td>
                        

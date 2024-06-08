@@ -2,7 +2,7 @@
 <div class="side-nav">
     <div class="side-nav-inner">
         <ul class="side-nav-menu scrollable">
-            <li class="nav-item dropdown" <?php echo ($active == 'home') ? "style='background-color: rgba(252, 186, 3, .15); border-right: 2px solid; border-color: #fc8c03;'" : "" ?> >
+            <li class="nav-item dropdown" <?php echo ($active == 'home') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> >
                 <a class="dropdown-toggle" href="<?php echo base_url(); ?>">
                     <span class="icon-holder">
                         <i class="anticon anticon-dashboard"></i>
@@ -11,7 +11,7 @@
                 </a>
             </li>
             
-            <li <?php echo ($active == 'projects') ? "style='background-color: rgba(252, 186, 3, .15); border-right: 2px solid; border-color: #fc8c03;'" : "" ?> class="nav-item dropdown">
+            <li <?php echo ($active == 'projects') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="anticon anticon-home"></i>
@@ -30,7 +30,7 @@
                     </li>
                 </ul>
             </li>
-            <li <?php echo ($active == 'clients') ? "style='background-color: rgba(252, 186, 3, .15); border-right: 2px solid; border-color: #fc8c03;'" : "" ?> class="nav-item dropdown">
+            <li <?php echo ($active == 'clients') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="anticon anticon-solution"></i>
@@ -52,7 +52,7 @@
                     </li>
                 </ul>
             </li>
-            <li <?php echo ($active == 'operations') ? "style='background-color: rgba(252, 186, 3, .15); border-right: 2px solid; border-color: #fc8c03;'" : "" ?> class="nav-item dropdown">
+            <li <?php echo ($active == 'operations') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="anticon anticon-setting"></i>
@@ -71,7 +71,7 @@
                     </li>
                 </ul>
             </li>
-            <li <?php echo ($active == 'users') ? "style='background-color: rgba(252, 186, 3, .15); border-right: 2px solid; border-color: #fc8c03;'" : "" ?> class="nav-item dropdown">
+            <li <?php echo ($active == 'users') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="anticon anticon-user-add"></i>
@@ -133,7 +133,7 @@
                 </ul>
             </li>
 -->
-            <li <?php echo ($active == 'reports') ? "style='background-color: rgba(252, 186, 3, .15); border-right: 2px solid; border-color: #fc8c03;'" : "" ?> class="nav-item dropdown">
+            <li <?php echo ($active == 'reports') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="anticon anticon-pie-chart"></i>

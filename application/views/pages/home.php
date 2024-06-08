@@ -2,7 +2,9 @@
 
     <div class="swiper-wrapper">
 
-      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(./assets/frontend/img/slide-1.jpg)">
+    <?php foreach ($slides as $slide) : ?>
+
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(<?php echo base_url("uploads/properties/") ?><?php echo $slide['url'] ?>)">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -10,15 +12,17 @@
               <div class="row">
                 <div class="col-lg-8">
                   <div class="intro-body">
-                    <p class="intro-title-top">Doral, Florida
-                      <br> 78345
+                    <p class="intro-title-top"> 
+                      <?php echo $slide['title'] ?>
                     </p>
                     <h1 class="intro-title mb-4 ">
-                      <span class="color-b">204 </span> Mount
-                      <br> Olive Road Two
+                      <span class="color-b"><?php echo $slide['street'] ?> <?php echo $slide['number'] ?>, </span> <br> <?php echo $slide['nhood'] ?>
                     </h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                      <a href="#"><span class="price-a">
+                        <?php
+                         if($slide['purpose'] == 'v'){echo "Venta";}
+                        elseif($slide['purpose'] == 'r'){echo "Renta";}else{echo "Traspaso";} ?> | <?php echo number_format($slide['price']) ?></span></a>
                     </p>
                   </div>
                 </div>
@@ -27,6 +31,9 @@
           </div>
         </div>
       </div>
+      <?php endforeach; ?>
+
+      <!--
       <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(./assets/frontend/img/slide-2.jpg)">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
@@ -77,6 +84,7 @@
           </div>
         </div>
       </div>
+      -->
     </div>
     <div class="swiper-pagination"></div>
   </div><!-- End Intro Section -->
@@ -91,10 +99,10 @@
           <div class="col-md-12">
             <div class="title-wrap d-flex justify-content-between">
               <div class="title-box">
-                <h2 class="title-a">Latest Properties</h2>
+                <h2 class="title-a">Propiedades Recientes</h2>
               </div>
               <div class="title-link">
-                <a href="property-grid.html">All Property
+                <a href="<?php echo base_url("property_list") ?>">Todas
                   <span class="bi bi-chevron-right"></span>
                 </a>
               </div>

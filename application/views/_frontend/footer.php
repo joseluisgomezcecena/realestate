@@ -2,6 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+          <!--
           <nav class="nav-footer">
             <ul class="list-inline">
               <li class="list-inline-item">
@@ -21,6 +22,7 @@
               </li>
             </ul>
           </nav>
+          -->
           <div class="socials-a">
             <ul class="list-inline">
               <li class="list-inline-item">
@@ -48,17 +50,11 @@
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">EstateAgency</span> All Rights Reserved.
+              <span class="color-a">Realestate</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">
-            <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
-          -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            App by <a href="https://github.com/joseluisgomezcecena/">joseluisgomezcecena</a>
           </div>
         </div>
       </div>

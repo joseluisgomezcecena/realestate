@@ -2,6 +2,7 @@
 
 class Pages extends CI_Controller
 {
+    
     public function view($page = 'home')
     {
         $data['controller'] = $this;
@@ -19,6 +20,7 @@ class Pages extends CI_Controller
 
         if ($page == 'home') {
 
+            $data['slides'] = $this->Property_model->get_slides();
             $data['properties'] = $this->Property_model->get_property();
            
             
@@ -30,11 +32,21 @@ class Pages extends CI_Controller
 
         }
 
+        if ($page == 'property_list'){
+            $data['properties'] = $this->Property_model->get_property();
+            $data['main_image'] = array();
+            foreach ($data['properties'] as $key => $property) {
+                $data['main_image'][$key] = $this->Property_model->get_main_image($property['property_id']);
+            }
+        }
+
         $this->load->view('_frontend/header', $data);
         $this->load->view('_frontend/navbar', $data);
         $this->load->view('pages/' . $page, $data);
         $this->load->view('_frontend/footer', $data);
     }
+
+
 
 
     public function property_details($slug) {
