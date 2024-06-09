@@ -41,12 +41,12 @@
     </div>
     <span class="close-box-collapse right-boxed bi bi-x"></span>
     <div class="box-collapse-wrap form">
-      <form class="form-a">
+      <form class="form-a" action="<?php echo base_url("pages/search/") ?>" method="post">
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
               <label class="pb-2" for="Type">Palabra clave</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Palabra clave">
+              <input type="text" name="keyword" class="form-control form-control-lg form-control-a" placeholder="Palabra clave">
             </div>
           </div>
           <div class="col-md-6 mb-2">
