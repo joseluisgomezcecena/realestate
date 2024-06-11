@@ -203,6 +203,41 @@ class Properties extends CI_Controller
 
 
 
+    public function delete($property_id){
+
+        //confirm delete.
+        $data['property'] = $this->Property_model->get_property($property_id);
+        $data['categories'] = $this->Categories_model->get_categories();
+        $data['title'] = 'Eliminar Propiedad';
+        $data['active'] = 'properties';
+        $data['states'] = $this->Property_model->get_states();
+        $data['custom_fields'] = $this->Customfields_model->get_customfields();
+        $data['property_custom_fields'] = $this->Property_model->get_custom_fields($property_id);
+        $data['users'] = $this->User_model->get_agents();
+
+        
+        $data['property_custom_field_ids'] = array_column($data['property_custom_fields'], 'c_custom_field');
+        
+        
+        if (!isset($_POST['submit'])) 
+        {
+            $this->load->view('_templates/header', $data);
+            $this->load->view('_templates/topnav');
+            $this->load->view('_templates/sidebar');
+            $this->load->view('properties/delete', $data);
+            $this->load->view('_templates/footer', $data);
+        } 
+        else
+        {
+            $this->Property_model->delete_property($property_id);
+            $this->session->set_flashdata('success', 'Propiedad eliminada exitosamente');
+            redirect(base_url() . 'properties');
+        }
+
+    }
+
+
+
 
     public function cover($property_id)
     {
@@ -319,6 +354,7 @@ class Properties extends CI_Controller
         $data = $this->Property_model->get_main_image($property);
         return $data['url'];
     }
+
 
     public function get_custom_fields($property_id)
     {
