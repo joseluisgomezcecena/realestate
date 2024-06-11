@@ -11,7 +11,7 @@
                 </a>
             </li>
             
-            <li <?php echo ($active == 'projects') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> class="nav-item dropdown">
+            <li <?php echo ($active == 'properties') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="anticon anticon-home"></i>
@@ -52,7 +52,7 @@
                     </li>
                 </ul>
             </li>
-            <li <?php echo ($active == 'operations') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> class="nav-item dropdown">
+            <li <?php echo ($active == 'categories' || $active == 'customfields') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="anticon anticon-setting"></i>
@@ -67,7 +67,7 @@
                         <a href="<?php echo base_url() ?>categories/index">Categorias</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() ?>customfields/index">Campos Personalizados</a>
+                        <a href="<?php echo base_url() ?>customs/index">Campos Personalizados</a>
                     </li>
                 </ul>
             </li>
