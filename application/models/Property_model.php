@@ -45,6 +45,18 @@ class Property_model extends CI_Model
     }
 
 
+    public function get_property_by_slug_category($slug)
+    {
+        $this->db->where('category_slug', $slug);
+        $this->db->select('property.*, category.category_name, category.category_id, estados.nombre as estado, municipios.nombre as ciudad');
+        $this->db->from('property');
+        $this->db->join('category', 'category.category_id = property.category');
+        $this->db->join('estados', 'estados.id = property.state', 'left');
+        $this->db->join('municipios', 'municipios.id = property.city', 'left');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
 
 
     public function get_main_image($property_id)
@@ -187,6 +199,52 @@ class Property_model extends CI_Model
         return $query->result_array();
     }
 
+
+
+    public function search($data){
+        $this->db->select('property.*, category.category_name, category.category_id, estados.nombre as estado, municipios.nombre as ciudad');
+        $this->db->from('property');
+        $this->db->join('category', 'category.category_id = property.category');
+        $this->db->join('estados', 'estados.id = property.state', 'left');
+        $this->db->join('municipios', 'municipios.id = property.city', 'left');
+
+        if (!empty($data['keyword'])) {
+            $this->db->like('title', $data['keyword']);
+            $this->db->or_like('description', $data['keyword']);
+        }
+
+        if (!empty($data['category'])) {
+            $this->db->where('category', $data['category']);
+        }
+
+        if (!empty($data['city'])) {
+            $this->db->where('city', $data['city']);
+        }
+
+        if (!empty($data['bedrooms'])) {
+            $this->db->where('bedrooms', $data['bedrooms']);
+        }
+
+        if (!empty($data['garages'])) {
+            $this->db->where('garage', $data['garages']);
+        }
+
+        if (!empty($data['bathrooms'])) {
+            $this->db->where('bathrooms', $data['bathrooms']);
+        }
+
+        if (!empty($data['transaction'])) {
+            $this->db->where('purpose', $data['transaction']);
+        }
+
+        $query = $this->db->get();
+        #return $query->result_array();
+
+        $last_query = $this->db->last_query();
+        print_r($last_query);
+       
+
+    }
 
 
 }

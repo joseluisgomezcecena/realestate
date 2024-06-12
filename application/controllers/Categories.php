@@ -33,8 +33,11 @@ class Categories extends MY_Controller
             $this->load->view('_templates/footer');
         } else {
 
+            $category_slug = url_title($this->input->post('category_name'));
+
             $data = array(
                 'category_name' => $this->input->post('category_name'),
+                'category_slug' => $category_slug
             );
 
 

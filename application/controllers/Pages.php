@@ -76,15 +76,45 @@ class Pages extends CI_Controller
     }
 
 
+    public function property_list($category = null)
+    {
+       
+        $data['controller'] = $this;
+
+        if ($category == null) {
+            $title = 'Nuestras propiedades';
+        } else {
+            $title = 'Propiedades en ' . $category;
+        }
+        $data['title'] = $title;
+        
+        $data['categories'] = $this->Categories_model->get_categories();
+        $data['cities'] = $this->Property_model->get_all_municipios();
+        $data['properties'] = $this->Property_model->get_property_by_slug_category($category);
+
+        $data['main_image'] = array();
+        foreach ($data['properties'] as $key => $property) {
+            $data['main_image'][$key] = $this->Property_model->get_main_image($property['property_id']);
+        }
+
+
+        $this->load->view('_frontend/header', $data);
+        $this->load->view('_frontend/navbar', $data);
+        $this->load->view('pages/property_list', $data);
+        $this->load->view('_frontend/footer', $data);
+    }
+
+
 
     public function search()
     {
-        if (isset($_POST['search'])){
+        if(isset($_POST['search']))
+        {
+                
             $data = array (
                 'search' => $this->input->post('search'),
                 'category' => $this->input->post('category'),
                 'city' => $this->input->post('city'),
-                'min_price' => $this->input->post('min_price'),
                 'max_price' => $this->input->post('max_price'),
                 'bedrooms' => $this->input->post('bedrooms'),
                 'bathrooms' => $this->input->post('bathrooms'),
@@ -94,12 +124,24 @@ class Pages extends CI_Controller
             );
 
             $data['properties'] = $this->Property_model->search($data);
+            
 
-            //redirect to property_list view
+            $data['controller'] = $this;
+            $data['categories'] = $this->Categories_model->get_categories();
+            $data['cities'] = $this->Property_model->get_all_municipios();
+            //$data['properties'] = $this->Property_model->get_property();
+
+            $data['main_image'] = array();
+            foreach ($data['properties'] as $key => $property) {
+                $data['main_image'][$key] = $this->Property_model->get_main_image($property['property_id']);
+            }
+
             $this->load->view('_frontend/header', $data);
             $this->load->view('_frontend/navbar', $data);
             $this->load->view('pages/property_list', $data);
             $this->load->view('_frontend/footer', $data);
+            
+                   
         }
     }
     

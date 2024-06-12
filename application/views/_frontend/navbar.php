@@ -37,7 +37,7 @@
               <a class="dropdown-item " href="agent-single.html">Agent Single</a>
               -->
               <?php foreach ($categories as $category) : ?>
-                <a class="dropdown-item" href="<?php echo base_url("property_list/" . $category['category_id']) ?>"><?php echo $category['category_name'] ?></a>
+                <a class="dropdown-item" href="<?php echo base_url("property_list/" . $category['category_slug']) ?>"><?php echo $category['category_name'] ?></a>
               <?php endforeach; ?>
             </div>
           </li>

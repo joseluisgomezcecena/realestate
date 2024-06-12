@@ -5,12 +5,14 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+
   <title><?= $title; ?></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link rel="icon" href="<?php echo base_url() ?>favicon.svg" />
+
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -41,7 +43,7 @@
     </div>
     <span class="close-box-collapse right-boxed bi bi-x"></span>
     <div class="box-collapse-wrap form">
-      <form class="form-a" action="<?php echo base_url("pages/search/") ?>" method="post">
+      <form class="form-a" action="<?php echo base_url("pages/search") ?>" method="post">
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
@@ -52,7 +54,7 @@
           <div class="col-md-6 mb-2">
             <div class="form-group mt-3">
               <label class="pb-2" for="Type">Transacción</label>
-              <select class="form-control form-select form-control-a" id="Type">
+              <select class="form-control form-select form-control-a" name="purpose" id="Type">
                 <option value="">Todas</option>
                 
                 <option value="r">Renta</option>
@@ -65,9 +67,8 @@
           <div class="col-md-6 mb-2">
             <div class="form-group mt-3">
               <label class="pb-2" for="city">Ciudad</label>
-              <input list="cities" class="form-control form-select form-control-a" id="city">
+              <input list="cities" class="form-control form-select form-control-a" name="city" id="city">
               <datalist id="cities">
-                <option value="Todas">
                 <?php foreach ($cities as $city) : ?>
                   <option value="<?php echo $city['nombre']; ?>">
                 <?php endforeach; ?>
@@ -78,10 +79,10 @@
           <div class="col-md-6 mb-2">
             <div class="form-group mt-3">
               <label class="pb-2" for="bedrooms">Recamaras</label>
-              <select class="form-control form-select form-control-a" id="bedrooms">
-                <option>Any</option>
+              <select class="form-control form-select form-control-a" name="bedrooms" id="bedrooms">
+                <option value="">Todas</option>
                 <?php for ($i = 1; $i <= 10; $i++) : ?>
-                  <option><?php echo $i; ?></option>
+                  <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                 <?php endfor; ?>
               </select>
             </div>
@@ -89,10 +90,10 @@
           <div class="col-md-6 mb-2">
             <div class="form-group mt-3">
               <label class="pb-2" for="garages">Garages</label>
-              <select class="form-control form-select form-control-a" id="garages">
-                <option>Any</option>
+              <select class="form-control form-select form-control-a" id="garages" name="garages">
+                <option value="">Todas</option>
                 <?php for ($i = 1; $i <= 10; $i++) : ?>
-                  <option><?php echo $i; ?></option>
+                  <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                 <?php endfor; ?>
               </select>
             </div>
@@ -100,10 +101,10 @@
           <div class="col-md-6 mb-2">
             <div class="form-group mt-3">
               <label class="pb-2" for="bathrooms">Baños</label>
-              <select class="form-control form-select form-control-a" id="bathrooms">
-                <option>Any</option>
+              <select class="form-control form-select form-control-a" name="bathrooms" id="bathrooms">
+                <option value="">Todas</option>
                 <?php for ($i = 1; $i <= 10; $i++) : ?>
-                  <option><?php echo $i; ?></option>
+                  <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                 <?php endfor; ?>
               </select>
             </div>
@@ -111,22 +112,22 @@
           <div class="col-md-6 mb-2">
             <div class="form-group mt-3">
               <label class="pb-2" for="price">Precio</label>
-              <select class="form-control form-select form-control-a" id="price">
-                <option>Sin limites</option>
-                <option>$50,000</option>
-                <option>$100,000</option>
-                <option>$150,000</option>
-                <option>$200,000</option>
-                <option>$500,000</option>
-                <option>1,000,000</option>
-                <option>2,000,000</option>
-                <option>5,000,000</option>
-                <option>10,000,000</option>
+              <select class="form-control form-select form-control-a" id="price" name="max_price">
+                <option value="">Sin limites</option>
+                <option value="50000">$50,000</option>
+                <option value="100000">$100,000</option>
+                <option value="150000">$150,000</option>
+                <option value="200000">$200,000</option>
+                <option value="500000">$500,000</option>
+                <option value="1000000">1,000,000</option>
+                <option value="2000000">2,000,000</option>
+                <option value="5000000">5,000,000</option>
+                <option value="10000000">10,000,000</option>
               </select>
             </div>
           </div>
           <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Buscar Propiedad</button>
+            <button type="submit" name="search" class="btn btn-b">Buscar Propiedad</button>
           </div>
         </div>
       </form>

@@ -77,7 +77,11 @@ $route['users/signature/(:any)'] = 'users/signature/$1';
 //reports routes.
 $route['reports'] = 'reports/index';
 
+$route['property_list/(:any)'] = 'pages/property_list/$1';
+$route['search'] = 'pages/search';
+
 $route['property/(:any)'] = 'pages/property_details/$1';
+
 //default routes.
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
