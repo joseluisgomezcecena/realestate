@@ -140,8 +140,10 @@ class Pages extends CI_Controller
             $this->load->view('_frontend/navbar', $data);
             $this->load->view('pages/property_list', $data);
             $this->load->view('_frontend/footer', $data);
-            
+
                    
+        }else{
+            redirect(base_url() . 'home');
         }
     }
     

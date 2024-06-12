@@ -238,10 +238,10 @@ class Property_model extends CI_Model
         }
 
         $query = $this->db->get();
-        #return $query->result_array();
+        return $query->result_array();
 
-        $last_query = $this->db->last_query();
-        print_r($last_query);
+        #$last_query = $this->db->last_query();
+        #print_r($last_query);
        
 
     }
