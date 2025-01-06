@@ -78,7 +78,7 @@
 
   <script>
   $(document).ready(function() {
-      $('form.form-a').on('submit', function(e) {
+      $('#contact').on('submit', function(e) {
           e.preventDefault();
 
           var name = $('#inputName').val();
