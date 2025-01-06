@@ -179,6 +179,13 @@ class Properties extends CI_Controller
 
             $this->Property_model->update_property($property_id, $data);
 
+
+            // Delete the current custom fields for this property. We'll add the new ones in a moment.
+            $this->db->where('c_property_id', $property_id);
+            $this->db->delete('property_custom_field');
+
+
+
             // Get the custom fields from the form submission
             $custom_fields = $this->input->post('custom_fields');
 
