@@ -201,50 +201,72 @@ class Property_model extends CI_Model
 
 
 
-    public function search($data){
+    public function search($data) {
+        // Perform the city lookup separately
+        if (!empty($data['city'])) {
+            $this->db->select('id');
+            $this->db->from('municipios');
+            $this->db->where('nombre', $data['city']);
+            $query = $this->db->get();
+            $city = $query->row_array();
+            
+            if ($city) {
+                $data['city'] = $city['id'];
+            } else {
+                $data['city'] = null;
+            }
+        }
+    
+        // Main query
         $this->db->select('property.*, category.category_name, category.category_id, estados.nombre as estado, municipios.nombre as ciudad');
         $this->db->from('property');
         $this->db->join('category', 'category.category_id = property.category');
         $this->db->join('estados', 'estados.id = property.state', 'left');
         $this->db->join('municipios', 'municipios.id = property.city', 'left');
-
+    
         if (!empty($data['keyword'])) {
             $this->db->like('title', $data['keyword']);
             $this->db->or_like('description', $data['keyword']);
+            $this->db->or_like('street', $data['keyword']);
+            $this->db->or_like('nhood', $data['keyword']);
         }
-
+    
         if (!empty($data['category'])) {
             $this->db->where('category', $data['category']);
         }
-
+    
         if (!empty($data['city'])) {
             $this->db->where('city', $data['city']);
         }
-
+    
         if (!empty($data['bedrooms'])) {
             $this->db->where('bedrooms', $data['bedrooms']);
         }
-
-        if (!empty($data['garages'])) {
-            $this->db->where('garage', $data['garages']);
+    
+        if (!empty($data['garage'])) {
+            $this->db->where('garage', $data['garage']);
         }
-
+    
         if (!empty($data['bathrooms'])) {
             $this->db->where('bathrooms', $data['bathrooms']);
         }
-
-        if (!empty($data['transaction'])) {
-            $this->db->where('purpose', $data['transaction']);
+    
+        if (!empty($data['purpose'])) {
+            $this->db->where('purpose', $data['purpose']);
         }
-
+    
+        if (!empty($data['max_price'])) {
+            $this->db->where('price <=', $data['max_price']);
+        }
+    
+        if (!empty($data['surface'])) {
+            $this->db->where('surface >=', $data['surface']);
+        }
+    
         $query = $this->db->get();
         return $query->result_array();
-
         #$last_query = $this->db->last_query();
         #print_r($last_query);
-       
-
     }
-
 
 }

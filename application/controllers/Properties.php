@@ -62,6 +62,10 @@ class Properties extends CI_Controller
 
             $slug = url_title($this->input->post('title'));
 
+
+            //$map = $this->input->post('map');
+            //$map = str_replace('https://www.google.com/maps/embed?pb=', '', $map);
+
             $data = array(
                 'slug' => $slug,
                 //'property_type' => $this->input->post('property_type'),
@@ -82,7 +86,9 @@ class Properties extends CI_Controller
                 'bedrooms' => $this->input->post('bedrooms'),
                 'bathrooms' => $this->input->post('bathrooms'),
                 'garage' => $this->input->post('garage'),
-                'user_id' => $this->input->post('user_id')
+                'user_id' => $this->input->post('user_id'),
+                'youtube_id' => $this->input->post('video'),
+                'google_map' => $this->input->post('map'),
             );
 
             $property_id = $this->Property_model->create_property($data);
@@ -154,6 +160,13 @@ class Properties extends CI_Controller
         {
             $slug = url_title($this->input->post('title'));
 
+            $map = $this->input->post('map');
+            if ($map ==  '' || $map == null || empty($map)) {
+                $map = $data['property']['google_map'];
+            }
+            
+          
+
             $data = array(
                 'slug' => $slug,
                 //'property_type' => $this->
@@ -174,7 +187,10 @@ class Properties extends CI_Controller
                 'bedrooms' => $this->input->post('bedrooms'),
                 'bathrooms' => $this->input->post('bathrooms'),
                 'garage' => $this->input->post('garage'),
-                'user_id' => $this->input->post('user_id')
+                'user_id' => $this->input->post('user_id'),
+                'youtube_id' => $this->input->post('video'),
+                'google_map' => $map,
+
             );
 
             $this->Property_model->update_property($property_id, $data);

@@ -10,6 +10,11 @@
     white-space: nowrap;
     margin: 5px; /* Adjust the margin as needed */
   }
+
+  iframe {
+    width: 100%;
+  }
+
 </style>
  <!-- ======= Intro Single ======= -->
  <section class="intro-single">
@@ -180,8 +185,15 @@
               </div>
               
               <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
+              <!--  
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834" width="100%" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
-              </div>
+              
+              <iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
+              -->
+                
+              <?php echo $property['google_map'] ?>  
+              
+            </div>
             </div>
           </div>
            
@@ -194,27 +206,30 @@
               </div>
             </div>
             <div class="row">
+              <!--
               <div class="col-md-6 col-lg-4">
-                <img src="assets/img/agent-4.jpg" alt="" class="img-fluid">
+                <img src="<?php echo base_url(); ?>assets/img/agent-4.jpg" alt="" class="img-fluid">
               </div>
-              <div class="col-md-6 col-lg-4">
+              -->
+              <div class="col-md-6 col-lg-6">
                 <div class="property-agent">
-                  <h4 class="title-agent"><?php echo $user['username'] ?></h4>
+                  <h4 class="title-agent"><?php echo strtoupper($user['username']); ?></h4>
                   <!--
                   <p class="color-text-a">
                     Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
                     dui. Quisque velit nisi,
                     pretium ut lacinia in, elementum id enim.
                   </p>
+                  justify-content-between
                 -->
                   <ul class="list-unstyled">
-                    <li class="d-flex justify-content-between">
-                      <strong>Telefono:</strong>
+                    <li class="d-flex ">
+                      <strong>Telefono: </strong>
                       <span class="color-text-a"><?php echo $user['user_phone'] ?></span>
                     </li>
                     
-                    <li class="d-flex justify-content-between">
-                      <strong>Email:</strong>
+                    <li class="d-flex ">
+                      <strong>Email: </strong>
                       <span class="color-text-a">
                         <?php echo $user['email'] ?>
                       </span>
@@ -254,7 +269,7 @@
                 -->
                 </div>
               </div>
-              <div class="col-md-12 col-lg-4">
+              <div class="col-md-12 col-lg-6">
                 <div class="property-contact">
                   <form class="form-a">
                     <div class="row">

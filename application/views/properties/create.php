@@ -214,12 +214,35 @@
                                 </div>
                             </div>
 
+
+                        </div>
+
+                        <div class="row">
+
+
                             <div class="col-md-12 mb-5">
                                 <div id="editor">
                                     <p>Descripción de la propiedad</p>
                                 </div>
                             </div>
                             <input type="hidden" name="description" id="editorContent">
+
+                            
+                            <div class="col-md-6">
+                                <div class="form-group mb-4">
+                                    <label for="video">Video de Youtube</label> 
+                                    <input type="text" class="form-control" name="video" id="video" placeholder="Video de youtube solo ingresa el id del video. Ejemplo: 1a2b3c4d5e6f">
+                                    <?php echo form_error('video', '<div class="text-danger">', '</div>'); ?>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group mb-4">
+                                    <label for="map">Google Map</label> 
+                                    <input type="text" class="form-control" name="map" id="map" placeholder="Google Map solo ingresa el id del mapa. Ejemplo: 1a2b3c4d5e6f">
+                                    <?php echo form_error('map', '<div class="text-danger">', '</div>'); ?>
+                                </div>
+                            </div>
 
                         </div>
                         

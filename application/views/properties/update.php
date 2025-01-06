@@ -1,3 +1,10 @@
+<style>
+    iframe {
+        width: 100%;
+        height: 250px;
+    }
+</style>
+
 <div class="page-header">
     <h2 class="header-title">Propiedades</h2>
     <div class="header-sub-title">
@@ -225,12 +232,40 @@
 
 
 
+                        </div>
+
+                        <div class="row">
+
                             <div class="col-md-12 mb-5">
                                 <div id="editor">
                                     <?php echo $property['description']; ?>
                                 </div>
                             </div>
                             <input type="hidden" name="description" id="editorContent">
+                                            
+
+
+                            <div class="col-md-6 mt-5">
+                                <div class="form-group mb-4">
+                                    <div style="width:100%; height:250px; ">
+                                    <iframe src="https://www.youtube.com/embed/<?php echo $property['youtube_id']; ?>"></iframe>
+                                    </div>
+                                    <label for="video">Video de Youtube</label> 
+                                    <input type="text" class="form-control" name="video" id="video" value="<?php echo $property['youtube_id'] ?>" placeholder="Video de youtube solo ingresa el id del video. Ejemplo: 1a2b3c4d5e6f">
+                                    <?php echo form_error('video', '<div class="text-danger">', '</div>'); ?>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-5">
+                                <div class="form-group mb-4">
+                                    <div style="width:100%; height:250px; ">
+                                        <?php echo $property['google_map']; ?>
+                                    </div>
+                                    <label for="map">Google Map</label> 
+                                    <input type="text" class="form-control" name="map" id="map"  placeholder="Google Map solo ingresa el id del mapa. Ejemplo: 1a2b3c4d5e6f">
+                                    <?php echo form_error('map', '<div class="text-danger">', '</div>'); ?>
+                                </div>
+                            </div>
 
                         </div>
                         

@@ -108,11 +108,14 @@ class Pages extends CI_Controller
 
     public function search()
     {
+
         if(isset($_POST['search']))
         {
+            $data['title'] = 'Resultados de la Busqueda.';
+
                 
-            $data = array (
-                'search' => $this->input->post('search'),
+            $data = array(
+                'keyword' => $this->input->post('keyword'),
                 'category' => $this->input->post('category'),
                 'city' => $this->input->post('city'),
                 'max_price' => $this->input->post('max_price'),
@@ -125,6 +128,7 @@ class Pages extends CI_Controller
 
             $data['properties'] = $this->Property_model->search($data);
             
+            
 
             $data['controller'] = $this;
             $data['categories'] = $this->Categories_model->get_categories();
@@ -136,11 +140,14 @@ class Pages extends CI_Controller
                 $data['main_image'][$key] = $this->Property_model->get_main_image($property['property_id']);
             }
 
+            
+
             $this->load->view('_frontend/header', $data);
             $this->load->view('_frontend/navbar', $data);
             $this->load->view('pages/property_list', $data);
             $this->load->view('_frontend/footer', $data);
 
+            
                    
         }else{
             redirect(base_url() . 'home');
