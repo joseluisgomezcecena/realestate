@@ -50,7 +50,7 @@
 
 
                             <div class="col-md-3">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="category">Tipo de Propiedad</label>
                                     <select class="form-control" name="category" id="category">
                                         <option value="">Seleccione una categoria</option>
@@ -63,7 +63,7 @@
                             </div>
 
                             <div class="col-md-3">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="purpose">Tipo de Transacción</label>
                                     <select class="form-control" name="purpose" id="purpose">
                                         <option value="">Seleccione un tipo de transacción</option>
@@ -76,7 +76,7 @@
                             </div>
 
                             <div class="col-md-3">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="price">Precio</label>
                                     <input type="text" class="form-control" name="price" id="price" placeholder="Precio">
                                     <?php echo form_error('price', '<div class="text-danger">', '</div>'); ?>
@@ -84,7 +84,7 @@
                             </div>
 
                             <div class="col-md-3">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="currency">Moneda</label>
                                     <select class="form-control" name="currency" id="currency">
                                         <option value="">Seleccione una moneda</option>
@@ -96,7 +96,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="surface">Superficie</label>
                                     <input type="text" class="form-control" name="surface" id="surface" placeholder="Superficie">
                                     <?php echo form_error('surface', '<div class="text-danger">', '</div>'); ?>
@@ -104,7 +104,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="build_surface">Superficie Construida</label>
                                     <input type="text" class="form-control" name="build_surface" id="build_surface" placeholder="Superficie Construida">
                                     <?php echo form_error('build_surface', '<div class="text-danger">', '</div>'); ?>
@@ -112,7 +112,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="um">Unidad de Medida</label>
                                     <select class="form-control" name="um" id="um">
                                         <option value="">Seleccione una unidad de medida</option>
@@ -125,7 +125,7 @@
 
 
                             <div class="col-md-4">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="bedrooms">Recamaras</label>
                                     <input type="text" class="form-control" name="bedrooms" id="bedrooms" placeholder="Recamaras">
                                     <?php echo form_error('bedrooms', '<div class="text-danger">', '</div>'); ?>
@@ -134,7 +134,7 @@
 
 
                             <div class="col-md-4">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="bathrooms">Baños</label>
                                     <input type="text" class="form-control" name="bathrooms" id="bathrooms" placeholder="Baños">
                                     <?php echo form_error('bathrooms', '<div class="text-danger">', '</div>'); ?>
@@ -142,7 +142,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="garage">Cochera</label>
                                     <input type="text" class="form-control" name="garage" id="garage" placeholder="Cochera">
                                     <?php echo form_error('garage', '<div class="text-danger">', '</div>'); ?>
@@ -151,7 +151,7 @@
 
 
                             <div class="col-md-4">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="street">Calle</label>
                                     <input type="text" class="form-control" name="street" id="street" placeholder="Calle">
                                     <?php echo form_error('street', '<div class="text-danger">', '</div>'); ?>
@@ -159,7 +159,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="number">Número</label>
                                     <input type="text" class="form-control" name="number" id="number" placeholder="Número">
                                     <?php echo form_error('number', '<div class="text-danger">', '</div>'); ?>
@@ -167,7 +167,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="nhood">Colonia</label>
                                     <input type="text" class="form-control" name="nhood" id="nhood" placeholder="Colonia">
                                     <?php echo form_error('nhood', '<div class="text-danger">', '</div>'); ?>
@@ -176,7 +176,7 @@
 
 
                             <div class="col-md-6">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="state">Estado</label>
                                 <select class="form-control" id="state" name="state">
                                         <option value="">Seleccione un estado</option>
@@ -191,7 +191,7 @@
 
 
                             <div class="col-md-6">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="city">Ciudad</label> 
                                     <select class="form-control" name="city" id="city">
                                         <option value="">Seleccionar ciudad</option>
@@ -202,7 +202,7 @@
 
 
                             <div class="col-md-6">
-                                <div class="form-group mb-3">
+                                <div class="form-group mb-4">
                                     <label for="city">Agente Inmobiliario</label> 
                                     <select class="form-control" name="user_id" id="user_id">
                                         <option value="">Seleccionar</option>
@@ -239,7 +239,7 @@
                     <h2 class="mb-5">Amenidades</h2>
                     <?php foreach ($custom_fields as $custom_field): ?>
                         <!--checkboxes-->
-                        <div class="form-check mb-3">
+                        <div class="form-check mb-4">
                             <input class="form-check-input" type="checkbox" value="<?php echo $custom_field['custom_id']; ?>" id="custom_field_<?php echo $custom_field['custom_id']; ?>" name="custom_fields[]">
                             <label class="form-check label" for="custom_field_<?php echo $custom_field['custom_id']; ?>">
                                 <?php echo $custom_field['custom_name']; ?>
