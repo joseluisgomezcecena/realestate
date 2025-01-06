@@ -10,8 +10,10 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link rel="icon" href="<?php echo base_url() ?>favicon.svg" />
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="<?php echo base_url() ?>assets/images/favicon.ico">
+
 
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
