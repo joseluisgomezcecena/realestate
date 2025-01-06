@@ -23,31 +23,34 @@
 <?php echo validation_errors(); ?>
 
 <div class="row">
+
+        <div class="col-lg-12">
+                <!-- echo flash messages -->
+                <?php if ($this->session->flashdata('success')) { ?>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Operación exitosa!</strong> <?php echo $this->session->flashdata('success'); ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php } ?>
+
+                    <!-- echo flash messages -->
+                    <?php if ($this->session->flashdata('error')) { ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Error</strong> <?php echo $this->session->flashdata('error'); ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php } ?>
+        </div>
     
         <div class="col-lg-6">
             <div class="card mt-3">
                 <div class="card-body">
 
-                    <!-- echo flash messages -->
-                    <?php if ($this->session->flashdata('success')) { ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>Operación exitosa!</strong> <?php echo $this->session->flashdata('success'); ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <?php } ?>
-
-                     <!-- echo flash messages -->
-                     <?php if ($this->session->flashdata('error')) { ?>
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>Error</strong> <?php echo $this->session->flashdata('error'); ?>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <?php } ?>
-
+                   
 
                     <h5 style="font-weight:900" class="mb-5">Subir imagen</h5>
 
@@ -58,7 +61,8 @@
                             <input type="file" class="custom-file-input" id="customFile" name="userfile">
                             <label class="custom-file-label" for="customFile">Choose file</label>
                             <button type="submit" name="submit" class="btn btn-success mt-5 mb-5 float-right">Guardar</button>
-                            
+                            <p id="file-chosen" class="alert alert-info" style="display: none;"></p>
+
                         </div>
                     </div>
                     </form>
@@ -114,3 +118,12 @@
         </div>
 
     </div>
+
+<script>
+document.getElementById('customFile').addEventListener('change', function() {
+    var fileName = this.files[0].name;
+    var fileChosen = document.getElementById('file-chosen');
+    fileChosen.textContent = 'File chosen: ' + fileName;
+    fileChosen.style.display = 'block';
+});
+</script>

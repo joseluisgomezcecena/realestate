@@ -3,7 +3,7 @@
     <div class="side-nav-inner">
         <ul class="side-nav-menu scrollable">
             <li class="nav-item dropdown" <?php echo ($active == 'home') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> >
-                <a class="dropdown-toggle" href="<?php echo base_url(); ?>">
+                <a class="dropdown-toggle" href="<?php echo base_url(); ?>admin">
                     <span class="icon-holder">
                         <i class="anticon anticon-dashboard"></i>
                     </span>
@@ -133,6 +133,7 @@
                 </ul>
             </li>
 -->
+            <!--
             <li <?php echo ($active == 'reports') ? "style='background-color: rgba(55, 222, 119, .15); border-right: 2px solid; border-color: #29b35e;'" : "" ?> class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
@@ -149,6 +150,7 @@
                     </li>
                 </ul>
             </li>
+            -->
         </ul>
     </div>
 </div>
