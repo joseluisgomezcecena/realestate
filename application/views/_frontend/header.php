@@ -29,6 +29,16 @@
   <!-- Template Main CSS File -->
   <link href="<?php echo base_url(); ?>assets/frontend/css/style.css" rel="stylesheet">
 
+  <style>
+    /* Custom CSS */
+    @media (max-width: 768px) {
+      .title-a {
+        font-size: 36px;
+      }
+    }
+  </style>
+
+
   <!-- =======================================================
   Jose Luis Gomez Ceceña.
   ======================================================== -->

@@ -93,7 +93,7 @@
 
 
    <!-- ======= Latest Properties Section ======= -->
-   <section class="section-property section-t8">
+   <section class="section-property section-t8 mb-5">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -102,7 +102,7 @@
                 <h2 class="title-a">Propiedades Recientes</h2>
               </div>
               <div class="title-link">
-                <a href="<?php echo base_url("property_list") ?>">Todas
+                <a class="btn btn-b-n " href="<?php echo base_url("property_list") ?>">Todas
                   <span class="bi bi-chevron-right"></span>
                 </a>
               </div>
