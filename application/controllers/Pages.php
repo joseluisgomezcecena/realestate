@@ -146,7 +146,9 @@ class Pages extends CI_Controller
 
             
                    
-        }else{
+        }
+        else
+        {
             redirect(base_url() . 'home');
         }
     }

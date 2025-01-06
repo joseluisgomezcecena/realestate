@@ -18,10 +18,22 @@
 
         <div class="row">
 
+        <?php 
+          //if there are no properties, show a message
+          if (empty($properties)):?>
+
+            <div style="height: 95vh;" class="col-lg-12 text-center mt-5 mb-5">
+              <h3>No hay resultados con estos parametros de busqueda.</h3>
+            </div>
+
+        <?php endif; ?>  
         
           
         <?php foreach ($properties as $property): ?>  
-          <div class="col-lg-4">
+
+         
+
+          <div class="col-lg-4 mb-5">
             <div class="">
            
             <div class="card-box-a card-shadow">
