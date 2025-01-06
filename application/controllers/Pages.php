@@ -47,8 +47,6 @@ class Pages extends CI_Controller
     }
 
 
-
-
     public function property_details($slug) {
         $data['controller'] = $this;
         
@@ -105,7 +103,6 @@ class Pages extends CI_Controller
     }
 
 
-
     public function search()
     {
 
@@ -155,12 +152,32 @@ class Pages extends CI_Controller
     }
     
  
-
-
-
     public function main_image($property)
     {
         $data = $this->Property_model->get_main_image($property);
         return $data['url'];
     }
+
+
+    public function send() {
+        $this->load->model('Message_model');
+    
+        $name = $this->input->post('name');
+        $email = $this->input->post('email');
+        $message = $this->input->post('message');
+        $property_id = $this->input->post('property_id');
+
+        $data = array(
+            'name' => $name,
+            'email' => $email,
+            'message' => $message,
+            'property' => $property_id
+            
+        );
+    
+        $this->Message_model->save_message($data);
+    
+        echo json_encode(array('status' => 'success'));
+    }
+          
 }

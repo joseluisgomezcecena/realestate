@@ -64,6 +64,9 @@
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
   <!-- Vendor JS Files -->
   <script src="<?php echo base_url(); ?>assets/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/frontend/vendor/swiper/swiper-bundle.min.js"></script>
@@ -71,6 +74,43 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/frontend/js/main.js"></script>
+
+
+  <script>
+  $(document).ready(function() {
+      $('form.form-a').on('submit', function(e) {
+          e.preventDefault();
+
+          var name = $('#inputName').val();
+          var email = $('#inputEmail1').val();
+          var message = $('#textMessage').val();
+          var property_id = $('#property_id').val();
+
+          $.ajax({
+              url: '<?php echo base_url(); ?>pages/send',
+              type: 'POST',
+              data: {
+                  name: name,
+                  email: email,
+                  message: message,
+                  property_id: property_id
+              },
+              success: function(response) {
+                  alert('Tu mensaje ha sido enviado con exito.');
+                  // Optionally, clear the form fields
+                  $('#inputName').val('');
+                  $('#inputEmail1').val('');
+                  $('#textMessage').val('');
+                  $('#property_id').val('');
+              },
+              error: function() {
+                  alert('Ocurrio un error. Por favor intenta de nuevo.');
+              }
+          });
+      });
+  });
+  </script>
+
 
 </body>
 

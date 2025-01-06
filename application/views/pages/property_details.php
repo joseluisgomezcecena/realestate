@@ -271,7 +271,8 @@
               </div>
               <div class="col-md-12 col-lg-6">
                 <div class="property-contact">
-                  <form class="form-a">
+                  <form class="form-a" action="<?php echo base_url(); ?>pages/send" method="post">
+                    <input type="hidden" name="property_id" id="property_id" value="<?php echo $property['property_id'] ?>">
                     <div class="row">
                       <div class="col-md-12 mb-1">
                         <div class="form-group">
