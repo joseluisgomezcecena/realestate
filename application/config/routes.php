@@ -38,6 +38,11 @@ $route['clients/delete/(:any)'] = 'clients/delete/$1';
 $route['clients/(:any)'] = 'clients/show/$1';
 
 
+//messages routes.
+$route['messages'] = 'messages/index';
+$route['messages/(:any)'] = 'messages/view/$1';
+
+
 //operations routes.
 $route['operations'] = 'operations/index';
 $route['operations/create'] = 'operations/create';

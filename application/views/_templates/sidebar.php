@@ -48,7 +48,7 @@
                         <a href="<?php echo base_url() ?>clients/">Ver Lista</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() ?>clients/messages">Ver Mensajes</a>
+                        <a href="<?php echo base_url() ?>messages">Ver Mensajes</a>
                     </li>
                 </ul>
             </li>
