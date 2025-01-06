@@ -91,7 +91,7 @@
                                     <?php foreach ($images as $image): ?>
                                         
                                         <li class="list-group-item" id="<?php echo $image['image_id']; ?>">
-                                            <form action="<?php echo base_url("projects/delete_operation/" . $image['image_id'] . "/" . $property['property_id']) ?>" method="post">
+                                            <form action="<?php echo base_url("properties/delete_image/" . $image['image_id'] . "/" . $property['property_id']) ?>" method="post">
                                                 <div class="row align-items-center">
                                                     <div class="col-6">
                                                         <div style="background: url('<?php echo base_url("uploads/properties/") . $image['url'] ?>') no-repeat center center; background-size: cover; height: 150px; width: 100%;"></div>

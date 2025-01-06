@@ -129,6 +129,24 @@ class Property_model extends CI_Model
     }
     
 
+    public function get_image($image_id){
+        $this->db->where('image_id', $image_id);
+        $query = $this->db->get('images');
+        return $query->row_array();
+    }
+
+
+    public function delete_image($image_id){
+        $this->db->where('image_id', $image_id);
+        $query = $this->db->get('images');
+        $image = $query->row_array();
+        $property_id = $image['property_id'];
+
+        $this->db->where('image_id', $image_id);
+        return $this->db->delete('images');
+    }
+
+
 
     public function update_cover($property_id){
         

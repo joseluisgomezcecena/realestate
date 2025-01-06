@@ -325,7 +325,26 @@ class Properties extends CI_Controller
 
 
 
-
+    public function delete_image($image_id, $property_id) {
+        $this->load->model('Property_model');
+    
+        // Get the image details
+        $image = $this->Property_model->get_image($image_id);
+    
+        if ($image) {
+            // Delete the image file from the server
+            $file_path = './uploads/properties/' . $image['url'];
+            if (file_exists($file_path)) {
+                unlink($file_path);
+            }
+    
+            // Delete the image record from the database
+            $this->Property_model->delete_image($image_id);
+        }
+    
+        // Redirect back to the property images page
+        redirect('properties/images/' . $property_id);
+    }
 
 
 
