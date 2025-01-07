@@ -292,6 +292,9 @@
                       <div class="col-md-12 mt-3 mb-5">
                         <button type="submit" class="btn btn-a">Enviar Mensaje</button>
                       </div>
+                      <div class="col-lg-12 mb-5">
+                      <button type="button" class="btn btn-primary" id="shareBtn"> <i class="bi bi-facebook"></i> Compartir en Facebook</button>
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -301,3 +304,32 @@
         </div>
       </div>
     </section><!-- End Property Single-->
+<script>
+document.getElementById('shareBtn').addEventListener('click', function() {
+    var propertyUrl = '<?php echo site_url("properties/details/" . $property['property_id']); ?>';
+    console.log(propertyUrl); // Debugging: Print the URL to the console
+    var facebookShareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(propertyUrl);
+    window.open(facebookShareUrl, 'facebook-share-dialog', 'width=800,height=600');
+    return false;
+});
+</script>
+<!--
+139/84 82
+129/75 71
+129/78 72
+124/74 70
+120/71 70
+116/75 69
+117/71 68
+113/71 70
+121/75 71
+137/77 72
+129/80 68
+119/75 70
+119/76 69
+116/74 67
+115/67 65
+111/73 67
+115/73 66
+116/70 64
+-->
