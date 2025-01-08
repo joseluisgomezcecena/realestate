@@ -21,7 +21,7 @@ class Pages extends CI_Controller
         if ($page == 'home') {
 
             $data['slides'] = $this->Property_model->get_slides();
-            $data['properties'] = $this->Property_model->get_property();
+            $data['properties'] = $this->Property_model->get_property(NULL, 1);
            
             
 
@@ -120,7 +120,8 @@ class Pages extends CI_Controller
                 'bathrooms' => $this->input->post('bathrooms'),
                 'garage' => $this->input->post('garage'),
                 'surface' => $this->input->post('surface'),
-                'purpose' => $this->input->post('purpose')
+                'purpose' => $this->input->post('purpose'),
+                'status' => 1
             );
 
             $data['properties'] = $this->Property_model->search($data);
