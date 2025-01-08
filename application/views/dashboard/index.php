@@ -1,7 +1,7 @@
 <div class="row">               
     <div class="col-md-6 col-lg-3">
-        <a href="">
-            <div class="card">
+        <a href="<?php echo base_url() ?>properties">
+            <div class="card-hover card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
@@ -53,21 +53,23 @@
         </div>
     </div>
     <div class="col-md-6 col-lg-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <p class="m-b-0">Mensajes del mes</p>
-                        <h2 class="m-b-0">
-                            <span><?php echo $messages_count_month ?></span>
-                        </h2>
-                    </div>
-                    <div class="avatar avatar-icon avatar-lg avatar-gold">
-                        <i class="anticon anticon-message"></i>
+        <a href="<?php echo base_url() ?>messages">
+            <div class="card card-hover">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="m-b-0">Mensajes del mes</p>
+                            <h2 class="m-b-0">
+                                <span><?php echo $messages_count_month ?></span>
+                            </h2>
+                        </div>
+                        <div class="avatar avatar-icon avatar-lg avatar-gold">
+                            <i class="anticon anticon-message"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
 </div>
 
