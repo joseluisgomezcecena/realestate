@@ -241,7 +241,6 @@ https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js
     });
 
 
-    
     $(document).ready(function() {
         $('#data-property').DataTable({
             scrollX: true,
@@ -253,9 +252,26 @@ https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js
             ],
             columnDefs: [
                 { width: '100px', targets: [0,4,6,7] },
-                { width: '150px', targets: [1,2,3,5,8] },
+                { width: '150px', targets: [1,2,3,5,8,9] },
                
-                { width: '200px', targets: [9] }
+                { width: '200px', targets: [10] }
+            ]
+        });
+    });
+
+
+    $(document).ready(function() {
+        $('#data-property-dash').DataTable({
+            scrollX: true,
+            scrollCollapse: true,
+            bSort: false,
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf', 'print', 'copy'
+            ],
+            columnDefs: [
+                { width: '130px', targets: [0,4,6,7] },
+                { width: '150px', targets: [1,2,3,5] }
             ]
         });
     });

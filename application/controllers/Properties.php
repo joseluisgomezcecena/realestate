@@ -9,7 +9,7 @@ class Properties extends CI_Controller
 
         $data['controller'] = $this;
 
-        $data['properties'] = $this->Property_model->get_property();
+        $data['properties'] = $this->Property_model->get_property(NULL, 1);//null for all properties, 1 for published properties
         $data['title'] = 'Propiedades';
         $data['active'] = 'properties';
 
@@ -223,6 +223,45 @@ class Properties extends CI_Controller
         }
 
     }
+
+
+
+    public function sold($property_id)
+    {
+    
+        $data['property'] = $this->Property_model->get_property($property_id);
+        $data['title'] = 'Vender Propiedad';
+        $data['active'] = 'properties';
+        $data['users'] = $this->User_model->get_agents();
+
+        
+        $this->form_validation->set_rules('seller', 'Vendedor', 'required');
+       
+        
+        if ($this->form_validation->run() === FALSE) 
+        {
+            $this->load->view('_templates/header', $data);
+            $this->load->view('_templates/topnav');
+            $this->load->view('_templates/sidebar');
+            $this->load->view('properties/sold', $data);
+            $this->load->view('_templates/footer', $data);
+        } 
+        else
+        {
+            $data = array(
+                'status' => 2,
+                'seller' => $this->input->post('seller'),
+                'sell_notes' => $this->input->post('description'),
+                'sell_date' => date('Y-m-d H:i:s')
+            );
+
+            $this->Property_model->sell_property($property_id, $data);
+            $this->session->set_flashdata('success', 'Propiedad registrada como vendida.');
+            redirect(base_url() . 'properties');
+        }
+    }
+
+
 
 
 

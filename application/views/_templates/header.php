@@ -162,6 +162,11 @@
 			transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
 		}
 
+		.custom-avatar {
+			width: 85px !important;
+			height: 85px !important;
+			border-radius: 50%;
+		}
 	</style>
 
 </head>

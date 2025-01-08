@@ -41,12 +41,14 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu">
+                    <!--
                     <li>
                         <a href="<?php echo base_url() ?>clients/create">Registrar Cliente</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url() ?>clients/">Ver Lista</a>
                     </li>
+                    -->
                     <li>
                         <a href="<?php echo base_url() ?>messages">Ver Mensajes</a>
                     </li>

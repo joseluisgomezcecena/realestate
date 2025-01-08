@@ -9,7 +9,7 @@ class Property_model extends CI_Model
 
 
 
-    public function get_property($property_id =NULL)
+    public function get_property($property_id =NULL, $status = NULL)
     {
         if ($property_id != NULL) {
             $this->db->where('property_id', $property_id);
@@ -22,6 +22,10 @@ class Property_model extends CI_Model
        // $this->db->join('custom_fields', 'custom_fields.custom_id = property_custom_field.c_custom_field', 'left');
         $this->db->join('estados', 'estados.id = property.state', 'left');
         $this->db->join('municipios', 'municipios.id = property.city', 'left');
+
+        if ($status != NULL) {
+            $this->db->where('status', $status);
+        }
        
         $query = $this->db->get();
         if ($property_id != NULL) {
@@ -82,6 +86,14 @@ class Property_model extends CI_Model
     }
 
 
+    public function count_property($status = NULL)
+    {
+        if ($status != NULL) {
+            $this->db->where('status', $status);
+        }
+        return $this->db->count_all_results('property');
+    }
+
 
 
     public function create_property($data){
@@ -116,6 +128,11 @@ class Property_model extends CI_Model
 
 
     public function update_property($property_id,$data){
+        $this->db->where('property_id', $property_id);
+        return $this->db->update('property', $data);
+    }
+
+    public function sell_property($property_id, $data){
         $this->db->where('property_id', $property_id);
         return $this->db->update('property', $data);
     }

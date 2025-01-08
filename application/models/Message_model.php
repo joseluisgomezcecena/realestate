@@ -33,4 +33,14 @@ class Message_model extends CI_Model
         return $query->row_array();
     }
 
+
+    public function count_message()
+    {
+        $this->db->select('*');
+        $this->db->from('messages');
+        $this->db->where('MONTH(created_at)', date('m'));
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
 }

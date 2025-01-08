@@ -27,6 +27,7 @@ $route['properties/images/(:any)'] = 'properties/images/$1';
 $route['properties/update/(:any)'] = 'properties/update/$1';
 $route['properties/delete/(:any)'] = 'properties/delete/$1';
 $route['properties/cover/(:any)'] = 'properties/cover/$1';
+$route['properties/sold/(:any)'] = 'properties/sold/$1';
 
 
 
