@@ -53,10 +53,12 @@
             <div id="property-single-carousel" class="swiper">
               <div class="swiper-wrapper">
                 
-            
               <?php foreach ($images as $image) : ?>
                 <div class="carousel-item-b swiper-slide">
+                  <div style="background-image: url('<?php echo base_url("uploads/properties/" . $image['url']); ?>'); background-size: cover; background-position: center; height: 550px;"></div>
+                <!--  
                   <img src="<?php echo base_url("uploads/properties/" . $image['url']) ?>" alt="">
+                -->
                 </div>
               <?php endforeach; ?>
                 <!--
