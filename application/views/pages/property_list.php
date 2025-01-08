@@ -36,10 +36,12 @@
           <div class="col-lg-4 mb-5">
             <div class="">
            
-            <div class="card-box-a card-shadow">
+            <div style="background-image: url('<?php echo base_url("uploads/properties/" . $controller->main_image($property['property_id'])); ?>'); background-size: cover; background-position: center; height: 450px;" class="card-box-a card-shadow">
+                <!--
                 <div class="img-box-a">
                   <img src="<?php echo base_url() ?>uploads/properties/<?php echo  $controller->main_image($property['property_id']) ?>" alt="" class="img-a img-fluid">
                 </div>
+                -->
                 <div class="card-overlay">
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
