@@ -54,7 +54,10 @@
             </p>
           </div>
           <div class="credits">
-            App by <a href="https://github.com/joseluisgomezcecena/">joseluisgomezcecena</a>
+            <!--
+            App by <a href="https://github.com/joseluisgomezcecena/">adminsystems</a>
+            -->
+            App by <a href="http://www.adminsystems.mx/">adminsystems</a>
           </div>
         </div>
       </div>
