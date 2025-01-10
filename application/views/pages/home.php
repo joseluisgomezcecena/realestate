@@ -5,7 +5,7 @@
     <div class="swiper-wrapper">
 
     <?php foreach ($slides as $slide) : ?>
-
+      <a href="<?php echo base_url("property/" . $slide['slug']) ?>">
       <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(<?php echo base_url("uploads/properties/") ?><?php echo $slide['url'] ?>)">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
@@ -21,7 +21,7 @@
                       <span class="color-b"><?php echo $slide['street'] ?> <?php echo $slide['number'] ?>, </span> <br> <?php echo $slide['nhood'] ?>
                     </h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">
+                      <a href="<?php echo base_url("property/" . $slide['slug']) ?>"><span class="price-a">
                         <?php
                          if($slide['purpose'] == 'v'){echo "Venta";}
                         elseif($slide['purpose'] == 'r'){echo "Renta";}else{echo "Traspaso";} ?> | <?php echo number_format($slide['price']) ?></span></a>
@@ -33,6 +33,7 @@
           </div>
         </div>
       </div>
+      </a>
       <?php endforeach; ?>
 
       <!--
@@ -116,7 +117,7 @@
           <div class="swiper-wrapper">
 
           <?php foreach ($properties as $property) : ?>
-            
+            <a href="<?php echo base_url("property/" . $property['slug']) ?>">
             <div  class="carousel-item-b swiper-slide">
               <div style="background-image: url('<?php echo base_url("uploads/properties/" . $controller->main_image($property['property_id'])); ?>'); background-size: cover; background-position: center; height: 450px;" class="card-box-a card-shadow">
                 <!--
@@ -128,7 +129,7 @@
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="property-single.html"><?php echo $property['title'] ?></a>
+                        <a href="<?php echo base_url("property/" . $property['slug']) ?>"><?php echo $property['title'] ?></a>
                           <br /> <?php echo $property['street'] ?> <?php echo $property['number'] ?> <?php $property['nhood'] ?></a>
                       </h2>
                     </div>
@@ -166,6 +167,7 @@
                 </div>
               </div>
             </div><!-- End carousel item -->
+            </a>
             <?php endforeach; ?>
 
 
